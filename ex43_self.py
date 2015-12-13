@@ -109,7 +109,7 @@ class Map(object):
 		self.start_scene = start_scene
 		
 	def next_scene(self, scene_name):
-		return Map.scenes[scene_name]
+		return self.scenes[scene_name]
 		
 	def opening_scene(self):
 		return self.next_scene(self.start_scene)
