@@ -10,6 +10,13 @@ def test_directions():
 						
 def test_verbs():
 	assert_equal(lexicon.scan("go"), [('verb', 'go')])
+	result = lexicon.scan("Go kill eat")
+	assert_equal(result, [('verb', 'Go'),
+						('verb', 'kill'),
+						('verb', 'eat')])
+						
+def test_stops():
+	assert_equal(lexicon.scan("the"), [('stop', 'the')])
 	result = lexicon.scan("the in of")
 	assert_equal(result, [('stop', 'the'),
 						('stop', 'in'),
